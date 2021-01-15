@@ -15,6 +15,8 @@ body{
 .main-header {position: -webkit-sticky;
 	position: sticky;
   top: 0;
+  text-align: justify;
+  padding: 15px;
   position: fixed;
     top: 0;
     left: 0;
@@ -22,10 +24,12 @@ body{
     height: 10%;
     z-index: 3;
     background: hsla(0,0%,100%,.98);
-    transition: box-shadow .25s ease 0s;}
-.main-header, .first-section, .second-section, .third-section {
+    transition: box-shadow .25s ease 0s;
+  }
+.first-section, .second-section, .third-section {
   padding: 30px;
 }
+
 .flexbox-item{ color: white;}
 h1 {color: lightseagreen;}
 
@@ -38,6 +42,11 @@ a, button {
 }
 .main-nav {
   float: right;
+  display: flex;
+  justify-content: flex-end ;
+  align-items: center;
+  margin-right: 50px;
+  padding-right: 50px;
 }
 button{
     padding: 9px 25px;
@@ -45,8 +54,13 @@ button{
     border-style: none;
     cursor: pointer;
     transition: all 0.3s ease 0s;
+    border-radius: 20px;
 }
-button:hover {background-color: none;}
+button:hover {
+  
+  color: #00ccb1;
+
+}
 .first-section{
   margin: 50px;
 }
@@ -56,9 +70,14 @@ button:hover {background-color: none;}
   grid-template-rows: 300px;
   grid-gap: 10px;
   justify-content: center;
+ 
 } 
-.flexbox-item{transform: translate(0);
-  opacity: 1;}
+.flexbox-item{
+  transform: translate(0);
+  opacity: 1;
+  border-radius: 15px;
+  padding:25px;
+}
 .third-section{
   display: grid;
   grid-template-columns: 350px 800px;
@@ -85,16 +104,23 @@ button:hover {background-color: none;}
     text-align: center;}
 .brand-logos {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   font-size: 0;
-  width: 67%;
+  width: 85%;
+  height: 50%;
   list-style: none;
 }
-.brand-logos li{font-size: 1rem;
-  display: inline-block;
-  width: 140px;
-  padding: 3px 0}
+.brand-logos li{
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  
+  width: 130px;
+  height: 50px;
+}
 .doctors{
   background-color: #3d83df;
 }
@@ -131,9 +157,10 @@ option {
       padding: 0px 2px 1px;
   }
 .office-cards{
+  padding-top: 50px;
   display: grid;
   grid-template-columns: repeat(3, 300px);
-  grid-template-rows: 300px;
+  grid-template-rows: 350px;
   grid-gap: 50px;
   justify-content: center;
 }
@@ -145,13 +172,8 @@ option {
   margin: 0 -10px;
   zoom: 1;
 }
-.office-cards .office{
-  width: 33.33%;
-float:left;
-}
-.office{
-  padding: 10px;
-}
+
+
 
 .texts {
   display: flex;
@@ -168,21 +190,25 @@ float:left;
   border: none;
 }
 .col-2{
-  width: 450px;
-  height: 450px;
+  width: 550px;
+  height: 500px;
+  position: relative;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  padding-left: 120px;
+  padding-top: 10px;
   float: left;
   background: url(https://www.docplanner.com/img/logo.png);
-  background-image: url (https://www.docplanner.com/img/logo.png);
-    background-position-x: initial;
-    background-position-y: initial;
-    background-size: initial;
-    background-repeat-x: no-repeat;
-    background-repeat-y: no-repeat;
-    background-attachment: initial;
-    background-origin: initial;
-    background-clip: initial;
-    background-color: initial;
+  background-repeat: no-repeat;
+  background-position-x: 80px;
+  background-position-y: 170px;
+  
 }
+
+.col-2 h3{
+  color: #00ccb1;
+}
+
 .col-3{
   flex: 50%;
   float: right;
@@ -230,14 +256,13 @@ div{
 .col-3{
 
 display: grid;
-  width: 50%;
-  display: grid;
-  grid-template-columns: 350px 800px;
-  grid-template-rows: 250px;
-  grid-gap: 0px;
-  justify-content: 
+  width: 40%;
+  grid-template-columns: 250px 250px;
+  grid-template-rows: 250px 250px;
+  grid-gap: 0px 0px;
+  
   transform: translate(0);
-    opacity: 1;}
+    }
 .verte {
   width: 100%;
     height: 100%;
@@ -249,16 +274,42 @@ display: grid;
 .boxes{background: #fff;
   border-radius: 5px;
   box-shadow: 0 1px 4px 0 rgba(0,0,0,.05);
-  width: 300px;
-  height: 200px;
+  width: 200px;
+  height: 210px;
   text-align: center;
   padding: 15px;
   font-size: .8125em;
+  
+}
+.dropdown-menu{
+  display:none;
+  position: absolute;
+  margin:0;
+  padding: 0;
+  }
+
+.dropdown-menu ul li{
+  display: block;
+  
 }
 
-.main-header {
+.hoverable-list :hover + .dropdown-menu {
+  display: block;
+  color: #00ccb1;
+  
 }
-.grid{}
-.first-section{}
-.header.first.section{}
-.col-1{}
+
+.hoverable-list:hover{
+  color: #00ccb1;
+  cursor: pointer ;
+
+}
+.hoverable-list{
+  position: relative;
+}
+
+.card-body{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
